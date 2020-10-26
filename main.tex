@@ -127,11 +127,47 @@ From the Euler-Lagrange equation for $\theta$,
 
 \begin{align*}
     \dot{r} \ddot{r}&=\frac{F}{m} \dot{r}-r \dot{r} \frac{l^{2}}{m^{2} r^{4}}-r^2 \frac{l}{m r^{2}}\left(-\frac{2 l}{m r^{3}}\right) \dot{r}\\
-    
+    \ddot{r}&=\frac{F}{m}+\frac{l^{2}}{m^{2} r^{3}}\\
 \end{align*}
+
+
+$$\boxed{\ddot{r}=\frac{l^{2}}{m^{2} r^{3}}-\frac{k}{r} e^{-\frac{r}{a}}}$$
+
+Using the effective potential, orbits are $\approx$ elliptical when $\partial_r V_\mathrm{eff} = 0$.
+
+\begin{align*}
+    V_{\text {eff }}&=-\int F d r+\frac{l^{2}}{2 m r^{2}}\\
+    &\\
+    \frac{d V_\mathrm{eff}}{d r}&=\frac{d V}{d r}-\frac{l^{2}}{m r^{3}}\\
+    0&=-F-\frac{l^{2}}{m r^{3}}\\
+    \frac{k}{r^{2}} e^{-\frac{r}{a}}& =\frac{\ell^{2}}{m r^{3}}\\
+    \frac{k m}{l^{2}} e^{-\frac{r}{a}}& =\frac{1}{r}\\
+\end{align*}
+
+For some value of $\frac{k m}{l^{2}}$, the LHS and RHS will have the same derivative, 
+
+\begin{align*}
+    -\frac{k m}{a l^{2}} e^{-\frac{r}{a}}&=-\frac{1}{r^{2}}\\
+    \frac{1}{a r}&=\frac{1}{r^{2}}\\
+\end{align*}
+
+$r=a$ is a saddle point. Closed orbits exist for some values of $r$ when $V_\mathrm{eff} < E <0, V_\mathrm{eff}>E>0$, and circular orbits for $V_\mathrm{eff} = E$.
 
 \subsection{}
 \textit{Show that if the orbit is nearly circular, the apsides will advance approximately by $\pi \rho / a$ per revolution, where $\rho$ is the radius of the circular orbit.}
+$$u = u_0 + \alpha \cos \beta \theta$$
+
+\begin{align*}
+    \frac{1}{r} &= \frac{1}{\rho} + \alpha \cos \beta \theta\\
+    &\\ 
+    \beta^2 &= 3 - \frac{r}{F}\frac{d F}{dr}\Big|_{r = \rho}\\
+    &= 1 - \frac{\rho}{a}\\
+    \beta &\approx 1 - \frac{\rho}{2a}\\
+    &\\
+    \theta &= \frac{2 \pi}{\beta}\\
+    &\approx 2 \pi (1 +  \frac{\rho}{2a})\\
+\end{align*}
+This shows that for every $2\pi$ radians, the apsides will include $\frac{\pi\rho}{a}$ in excess. 
 
 
 
@@ -139,24 +175,77 @@ From the Euler-Lagrange equation for $\theta$,
 
 
 \section{GPS 3.21}
-\textit{Show that the motion of a particle in the potential field
+\textit{Show that the motion of a particle in the potential field}
 $$
 V(r)=-\frac{k}{r}+\frac{h}{r^{2}}
 $$
-is the same as that of the motion under the Kepler potential alone when expressed in terms of a coordinate system rotating or precessing around the center of force.
+\textit{is the same as that of the motion under the Kepler potential alone when expressed in terms of a coordinate system rotating or precessing around the center of force.}
 
-For negative total energy, show that if the additional potential term is very small compared to the Kepler potential, then the angular speed of precession of the elliptical orbit is
+\textit{For negative total energy, show that if the additional potential term is very small compared to the Kepler potential, then the angular speed of precession of the elliptical orbit is}
 $$
 \dot{\Omega}=\frac{2 \pi m h}{l^{2} \tau}
 $$
-The perihelion of Mercury is observed to precess (after correction for known planetary perturbations) at the rate of about $40^{\prime \prime}$ of arc per century. Show that this precession could be accounted for classically if the dimensionless quantity
+\textit{The perihelion of Mercury is observed to precess (after correction for known planetary perturbations) at the rate of about $40^{\prime \prime}$ of arc per century. Show that this precession could be accounted for classically if the dimensionless quantity}
 $$
 \eta=\frac{h}{k a}
 $$
-(which is a measure of the perturbing inverse-square potential relative to the gravitational potential) were as small as $7 \times 10^{-8}$. (The eccentricity of Mercury's orbit is $0.206,$ and its period is 0.24 year.)}
+\textit{(which is a measure of the perturbing inverse-square potential relative to the gravitational potential) were as small as $7 \times 10^{-8}$. (The eccentricity of Mercury's orbit is $0.206,$ and its period is 0.24 year.)}
+
+\begin{align*}
+    \frac{d^{2} u}{d \theta^{2}}+u&=-\frac{m}{l^{2}} \frac{d}{d u}\left(-k u+h u^{2}\right)\\
+    &=\frac{m k}{l^{2}}-\frac{2 h m}{l^{2}} u\\
+\end{align*}
+\begin{align*}
+    \frac{d^{2} u}{d \theta^{2}}+(1+\frac{2 h m}{l^{2}}) u&=\frac{m k}{l^{2}}\
+\end{align*}
+
+Let $\lambda^2  = 1+\frac{2 h m}{l^{2}}$.
+$$
+    \frac{d^{2}}{d \theta^{2}}\left(u-\frac{m k}{\lambda^{2} l^{2}}\right)+\lambda^{2}\left(u-\frac{m k}{\lambda^{2} l^{2}}\right)=0
+$$
+Which has real solutions 
+$$ u = \frac{m k}{\lambda^{2} l^{2}} + A \cos \lambda\theta + B \sin \lambda \theta$$.
+
+
+At perihelion, 
+\begin{align*}
+    \frac{1}{r_{\min }}-\frac{m k}{\lambda^{2} l^{2}}&=A\\
+    \lambda B \cos \lambda \theta &=0
+\end{align*}
+
+$$
+    u = \frac{m k}{\lambda^{2} l^{2}} ( 1 - \cos \lambda \theta) + \frac{\cos \lambda \theta}{r_\mathrm{min}}
+$$
+$$
+r=\frac{\lambda^{2} l^{2}}{m k} \frac{1}{1+e \cos \lambda \theta}
+$$
+
+\begin{align*}
+    \theta&=\frac{2 \pi}{\lambda}\\
+    &=\frac{2 \pi}{\sqrt{1+\frac{2 h m}{l^{2}}}}\\
+    &=2 \pi\left(1+\frac{2 h m}{l^{2}}\right)^{-\frac{1}{2}}\\
+    &=2 \pi-\frac{2 \pi m h}{l^{2}}
+\end{align*}
+
+this corresponds to a perihelion precession of $\frac{2 \pi m h}{l^{2}}$ every period. 
+
+\begin{align*}
+    \dot\Omega &= \frac{2 \pi m h}{\tau l^{2}}\\
+    &=\frac{2 \pi}{\tau} \frac{1}{1-e^{2}} \frac{h}{k a}\\
+    &=\frac{2 \pi}{\tau} \frac{\eta}{1-e^{2}} 
+\end{align*}
+
+\begin{align*}
+    \eta &= \frac{\left(1-e^{2}\right) \tau \dot{\Omega}}{2 \pi}\\
+    &= \frac{\left(1-0.206^{2}\right) (0.24 \mathrm{years}) (\frac{40^{\prime\prime}}{\mathrm{century}})}{2 \pi}\\
+    &= 7.09307 \times 10^{-8}
+\end{align*}
 
 \newpage
+
 \section{GPS 3.22}
 \texit{The additional term in the potential behaving as $r^{-2}$ in Exercise 21 looks very much like the centrifugal barrier term in the equivalent one-dimensional potential. Why is it then that the additional force term causes a precession of the orbit, while an addition to the barrier, through a change in $l,$ does not?}
+the additional force term causes a precession in the orbit because it acts as a centrifugal term, however the term is more significant for larger l because the term is $\propto \frac{1}{l^2}$. 
+
 
 \end{document}
